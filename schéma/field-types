@@ -1,0 +1,31 @@
+  <fieldType name="_idf" class="solr.TextField" omitNorms="false" omitTermFreqAndPositions="false" large="false" indexed="true" enableGraphQueries="true" docValues="false" termVectors="false" tokenized="true" autoGeneratePhraseQueries="false" stored="true" uninvertible="false" omitPositions="false" multiValued="true" storeOffsetsWithPositions="false" synonymQueryStyle="AS_SAME_TERM">
+    <analyzer type="index">
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+    </analyzer>
+    <analyzer type="query">
+      <tokenizer name="standard"/>
+      <filter name="lowercase"/>
+    </analyzer>
+    <similarity class="solr.ClassicSimilarityFactory">
+    </similarity>
+  </fieldType>
+  
+  <fieldType name="_idf_pro" class="solr.TextField" omitNorms="false" omitTermFreqAndPositions="false" large="false" indexed="true" enableGraphQueries="true" docValues="false" termVectors="false" tokenized="true" autoGeneratePhraseQueries="false" stored="true" uninvertible="false" omitPositions="false" multiValued="true" storeOffsetsWithPositions="false" synonymQueryStyle="AS_SAME_TERM">
+    <analyzer type="index">
+      <tokenizer name="standard"/>
+      <filter name="classic"/>
+      <filter name="lowercase"/>
+      <filter words="stopwords.txt" ignoreCase="true" name="stop"/>
+      <filter name="porterstem"/>
+    </analyzer>
+    <analyzer type="query">
+      <tokenizer name="standard"/>
+      <filter name="classic"/>
+      <filter name="lowercase"/>
+      <filter words="stopwords.txt" ignoreCase="true" name="stop"/>
+      <filter name="porterstem"/>
+    </analyzer>
+    <similarity class="solr.ClassicSimilarityFactory">
+    </similarity>
+  </fieldType>
