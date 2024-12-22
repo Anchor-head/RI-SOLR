@@ -8,9 +8,9 @@ for filename in os.listdir(source_folder):
     file_path = os.path.join(source_folder, filename)
     new_file_path = os.path.join(destination_folder, filename)
 
-    # Read file to check if it's XML
     with open(file_path, 'r') as file:
         myfile = file.read().strip()
+        # Vérifier que le document respecte bien au minimum le format xml
         if myfile.startswith("<") and myfile.endswith(">"):
             new_file = os.path.splitext(new_file_path)[0] + '.xml'
             try:
