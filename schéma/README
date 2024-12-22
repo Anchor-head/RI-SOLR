@@ -1,0 +1,4 @@
+Le fichier managed-schema.xml représente mon schéma Solr utilisé pour la recherche. De ce document, j'ai extrait les quatre fieldtypes que j'ai
+utilisé pour mes quatre modèles de base.
+
+Le fichier stopwords.txt représente la liste de stopwords qu'a appliqué le stopword filter dans les modèles avec prétraitement.
